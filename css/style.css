@@ -1,0 +1,266 @@
+/* Global designs*/
+*{padding: 0;margin: 0;box-sizing: border-box;}
+*::selection{background-color: #88b3e0ad;}
+*:focus {outline: none;}
+html,
+body{
+    font-family: 'poppins', 'Arail';
+    text-transform: capitalize;
+}
+
+/* The scroll handle Design */
+::-webkit-scrollbar {width: 10px;}
+::-webkit-scrollbar-track {background: #f1f1f1}
+::-webkit-scrollbar-thumb {background: #888}
+::-webkit-scrollbar-thumb:hover {background: #555}
+
+/*To Top Button*/
+.to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    box-shadow: 1px 1px 2px #000, -1px -1px 2px #000;
+    transition: all 0.3s ease-in-out
+}
+.to-top:hover{box-shadow: none;}
+.to-top a {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+.to-top.go {opacity: 1;pointer-events: all}
+/* End To Top Button Design */
+
+/* The Main Header Design */
+.main-header{
+    min-height: 100vh;
+    background: url(../images/background.png) center no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #FFF
+}
+
+/* The Nav Design */
+.main-header nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    width: 100%;
+    position: fixed;
+    top: 0;left: 0;
+    z-index: 3;
+    -webkit-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+    -ms-backdrop-filter: blur(10px);
+    -o-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px)
+}
+.main-header nav h1{
+    letter-spacing: 4px;
+    text-transform: none;
+    transition: all 0.3s ease-in-out
+}
+.main-header nav h1:hover{letter-spacing: 1px}
+.main-header nav a{/* For any link in the nav */
+    color: #FFF;
+    text-decoration: none;width: 100%;
+} 
+.main-header nav ul{
+    list-style: none;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center
+}
+.main-header nav li{
+    cursor: pointer;
+    letter-spacing: 2px;
+    padding: 2px;
+    margin-left: auto;
+    border-top: 2px solid transparent;
+    transition: all 0.3s ease-in-out
+}
+.main-header nav li:hover, .main-header nav li a.active{border-top: 2px solid #FFF}
+/* End The Nav Design */
+
+/* The banner Design */
+.main-header .banner{text-align: center;line-height: 1.5}
+.main-header .banner h2{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 20px
+}
+.main-header .banner p{font-size: 0.9rem;letter-spacing: 2px}
+.main-header .banner button{
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    border: none;
+    padding: 5px;
+    width: 160px;
+    height: 45px;
+    margin-top: 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out
+}
+.main-header .banner button:hover{
+    width: 170px;
+    letter-spacing: 4px;
+    margin-right: 5px;
+    transform: scale(1.05)
+}
+
+/* The main Container */
+.container{width: 90%;margin: auto;}
+
+/* About, Contact and FQA Sections Mutual Designs */
+.about,
+.contact,
+.fqa{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    -webkit-gap: 10px;
+    -moz-gap: 10px;
+    -ms-gap: 10px;
+    -o-gap: 10px;
+    gap: 10px;
+    width: 100%
+}
+
+/* The About Section Design */
+.about{background-color: #FFB9BA}
+.about .image{float: right}
+.about .image img{width: 100%}
+
+/* Image And Content Mutual Designs*/
+.about .image,
+.about .content{
+    width: 50%;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    transition-delay: 0.5s;
+    pointer-events: none
+}
+.about .content{
+    float: left;
+    margin-top: 10%;
+    line-height: 1.5;
+    letter-spacing: -0.5px;
+    font-size: 1.1rem
+}
+.about .content h2{
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 30px
+}
+/* End About Section */
+
+/* The Contact Section Design */
+.contact{background-color: #BFCAD6}
+
+/* Image And Content Mutual Designs*/
+.contact .contact-image,
+.contact .contact-content{
+    width: 50%;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    transition-delay: 0.5s;
+    pointer-events: none
+}
+.contact .contact-image img{width: 100%;float: left;}
+.contact .contact-content{
+    float: right;
+    text-align: center;
+    margin-top: 10%;
+    line-height: 1.5;
+    letter-spacing: -0.5px;
+    font-size: 1.1rem
+}
+.contact .contact-content h2{
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 30px
+}
+/* End The Contact Section Design */
+
+/* FQA Section Design */
+.fqa{background-color: #D5C1AF}
+
+.fqa .fqa-image,
+.fqa .fqa-content{
+    width: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+    transition-delay: 0.5s
+}
+.fqa .fqa-image{float: right}
+.fqa .fqa-image img{width: 100%}
+.fqa .fqa-content{
+    float: left;
+    margin-top: 10%;
+    line-height: 1.5;
+    letter-spacing: -0.5px;
+    font-size: 1.1rem
+}
+.fqa .fqa-content h2{
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 30px
+}
+
+/* The active Class design */
+section div{opacity: 0;visibility: none;pointer-events: none;transition: 1s;}
+section.active div
+{opacity: 1 !important;visibility: visible !important;pointer-events: all !important;}
+
+/* The Footer Design */
+footer{
+    padding: 30px 0;
+    text-align: center;
+    letter-spacing: 3px;
+    background-color: #BFCAD6
+}
+/* The Media Query */
+
+/* Small Screens width */
+@media (max-width:768px) {
+    .about .image,
+    .about .content,
+    .contact .contact-image,
+    .contact .contact-content,
+    .fqa .fqa-image,
+    .fqa .fqa-content{width: 100%;float: none;padding: 30px 0}
+}
+
+/* Extra Small Screens width */
+@media (max-width:410px) {
+    .main-header nav{flex-direction: column;}
+    .main-header nav ul{width: 100%;}
+    .main-header nav ul li{margin: auto;}
+    .main-header .banner{padding: 0 10px;}
+    .main-header .banner h2{font-size: 2.2rem;}
+    .main-header .banner p{font-size: 0.7rem}
+}
+/* Done El7amdullah */
